@@ -31,10 +31,22 @@ Cada jogador tem uma frota de 11 navios.
 ## Regras do jogo
 
 ### Posicionamento da frota
+1. Cada jogador tem duas grelhas de 10×10: o *seu mar* e o *mar do adversário*.
+2. Os navios são colocados na orientação *horizontal* ou *vertical* (nunca na diagonal).
+3. Os navios *não podem tocar-se* entre si, mas *podem encostar à borda* da grelha.
+4. O número e os tipos de navios são iguais para ambos os jogadores (ver tabela acima).
+5. O adversário não vê a posição dos navios.
 
 ### Decorrer do jogo
-
+1. Depois de posicionadas as frotas, os jogadores jogam *à vez*.
+2. Em cada jogada, o jogador dispara *três tiros* sobre a frota adversária, indicando as coordenadas de cada um (*linha, coluna*).
+3. O adversário responde ao resultado da rajada, indicando:
+   - se acertou em *um ou mais navios* e de que *tipo*;
+   - quais os tiros que foram *na água*.
+4. Cada jogador regista na grelha do oponente os resultados dos seus tiros, identificando os navios *afundados*.
+  
 ### Fim do jogo
+Ganha o primeiro jogador que *afundar todos os navios* da frota adversária.
 
 ## Referências / links dos navios
 
