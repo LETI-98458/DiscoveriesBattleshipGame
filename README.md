@@ -48,6 +48,18 @@ Cada jogador tem uma frota de 11 navios.
 ### Fim do jogo
 Ganha o primeiro jogador que *afundar todos os navios* da frota adversária.
 
-## Referências / links dos navios
+## 🔗 Para saber mais
 
-## Tecnologias utilizadas
+- [Batalha naval (jogo)](https://pt.wikipedia.org/wiki/Batalha_naval_(jogo))
+- [Galeão](https://pt.wikipedia.org/wiki/Gale%C3%A3o)
+- [Fragata](https://pt.wikipedia.org/wiki/Fragata)
+- [Nau](https://pt.wikipedia.org/wiki/Nau)
+- [Caravela](https://pt.wikipedia.org/wiki/Caravela)
+- [Barca](https://pt.wikipedia.org/wiki/Barca)
+
+## 🛠️ Tecnologias
+
+- Java
+- Git e GitHub (Issues, Pull Requests, GitHub Actions)
+- IntelliJ IDEA Ultimate
+- Javadoc (documentação em docs/)
