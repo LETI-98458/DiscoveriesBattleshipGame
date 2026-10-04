@@ -1,0 +1,48 @@
+name: Notificar Colegas no Pull Request
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  notify-reviewers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping aos membros do grupo exceto o autor
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // 1. Coloca aqui os usernames do GitHub de TODOS os membros do grupo:
+            const teamMembers = [
+              'LETI-129808',
+              'LETI-130755',
+              'LETI-98458'
+            ];
+
+            // 2. Identifica o autor do Pull Request
+            const prAuthor = context.payload.pull_request.user.login;
+
+            // 3. Filtra para retirar o autor do PR
+            const reviewersToPing = teamMembers.filter(member => member.toLowerCase() !== prAuthor.toLowerCase());
+
+            if (reviewersToPing.length === 0) {
+              console.log('Nenhum colega para notificar.');
+              return;
+            }
+
+            // 4. Cria a string com as menções: @colega1, @colega2, ...
+            const mentions = reviewersToPing.map(member => `@${member}`).join(' ');
+
+            // 5. Publica o comentário automático no PR
+            const body = `Olá ${mentions}! 👋\n\nO colega @${prAuthor} submeteu este Pull Request para revisão.\nPor favor, vejam as alterações no separador **Files changed** e procedam à aprovação/merge quando estiver tudo em ordem!`;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
